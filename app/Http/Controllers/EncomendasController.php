@@ -8,11 +8,10 @@ use App\Models\Encomenda;
 class EncomendasController extends Controller
 {
     //
-
     public function index(){
 
         $encomendas = Encomenda::where('id_encomenda', '>','0')->with('cliente')->get();
-        
+       
 		return view ('encomendas.index', [
 			'encomendas'=>$encomendas
 		]);
@@ -22,7 +21,7 @@ class EncomendasController extends Controller
 
         $idEncomenda = $r->id;
 
-        $encomendas = Encomenda::where('id_encomenda',$idEncomenda)->with('cliente')->first();
+        $encomendas = Encomenda::where('id_encomenda',$idEncomenda)->with(['cliente','vendedor','encomenda_produto'])->first();
 		return view('encomendas.show',[
 			'encomendas'=>$encomendas
 		]);

@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/clientes', 'App\Http\Controllers\ClientesController@index')->name('clientes.index');
 
@@ -32,3 +29,7 @@ Route::get('/vendedores/{id}/show', 'App\Http\Controllers\VendedoresController@s
 Route::get('/encomendas', 'App\Http\Controllers\EncomendasController@index')->name('encomendas.index');
 
 Route::get('/encomendas/{id}/show', 'App\Http\Controllers\EncomendasController@show')->name('encomendas.show');
+
+Route::get('/formulario', 'App\Http\Controllers\FormularioController@formulario')->name('formulario');
+
+Route::post('/mostrar', 'App\Http\Controllers\MostrarController@mostrar')->name('mostrar');

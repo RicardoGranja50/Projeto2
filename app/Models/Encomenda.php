@@ -16,4 +16,14 @@ class Encomenda extends Model
 
         return $this->belongsTo('App\Models\Cliente','id_cliente');
     }
+
+    public function vendedor(){
+
+        return $this->belongsTo('App\Models\Vendedor','id_vendedor');
+    }
+
+    public function encomenda_produto(){
+
+        return $this->belongsTo('App\Models\EncomendaProduto','id_encomenda');
+    }
 }

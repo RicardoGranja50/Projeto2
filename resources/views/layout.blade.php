@@ -8,17 +8,21 @@
     </head>
     <body>
         <h1 style="color: red"> @yield("header")</h1>
-        @yield('paginacao')
-
-        <nav aria-label="Navegação de página exemplo">
-            <ul class="pagination">
-                <li class="page-item"></li>
-                <li class="page-item"></li>
-                <li class="page-item"></li>
-                <li class="page-item"></li>
-                <li class="page-item"></li>
-            </ul>
-        </nav>
+        
+        @yield('c')
+        <div class="container">
+             <div class="row">
+                <div class="col-sm">
+                    Uma de três colunas
+                </div>
+                <div class="col-sm">
+                    Uma de três colunas
+                </div>
+                <div class="col-sm">
+                    Uma de três colunas
+                </div>
+            </div>
+        </div>
         @yield('conteudo')
     </body>
 </html>

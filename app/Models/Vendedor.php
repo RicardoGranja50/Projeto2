@@ -11,4 +11,9 @@ class Vendedor extends Model
 
     protected $primaryKey="id_vendedor";
     protected $table="vendedores";
+
+    public function encomenda(){
+
+        return $this->hasMany('App\Models\Encomenda','id_vendedor');
+    }
 }

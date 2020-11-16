@@ -11,4 +11,9 @@ class Produto extends Model
 
     protected $primaryKey="id_produto";
     protected $table="produtos";
+
+    public function encomenda_produto(){
+
+        return $this->hasMany('App\Models\EncomendaProduto','id_enc_prod');
+    }
 }
