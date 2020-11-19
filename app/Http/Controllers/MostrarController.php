@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cliente;
+use App\Models\Encomenda;
 
 class MostrarController extends Controller
 {
@@ -14,8 +15,7 @@ class MostrarController extends Controller
         $pesquisa = $r->nome;
 
         $cliente = Cliente::where('nome',$pesquisa)->first();
-        $clientes = Cliente::where('nome','like','%'.$pesquisa.'%')->get();
-        
+        $clientes = Cliente::where('nome','like','%'.$pesquisa.'%')->with('encomenda')->get();
 
         return view('mostrar', [
             'pesquisa'=>$pesquisa,

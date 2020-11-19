@@ -13,6 +13,7 @@ Formulario
         </div>
     </div>
 </div>
+<br>
 <form method="post" action="{{route('mostrar')}}">
         @csrf
     <label for="name"> Nome Cliente </label>
