@@ -3,7 +3,7 @@
 @foreach($encomendas as $encomenda)
     <li>
 		<a href="{{route('encomendas.show', ['id'=>$encomenda->id_encomenda])}}">
-		{{$encomenda->cliente->nome}}
+		{{$encomenda->id_encomenda}}
 	</li>
 @endforeach
 </ul>

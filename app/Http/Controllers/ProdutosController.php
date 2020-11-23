@@ -22,7 +22,7 @@ class ProdutosController extends Controller
 
         $idProduto = $r->id;
 
-        $produtos = Produto::where('id_produto',$idProduto)->first();
+        $produtos = Produto::where('id_produto',$idProduto)->with('encomendas')->first();
 
 		return view('produtos.show',[
 			'produtos'=>$produtos

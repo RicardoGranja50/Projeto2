@@ -26,4 +26,9 @@ class Encomenda extends Model
 
         return $this->belongsTo('App\Models\EncomendaProduto','id_encomenda');
     }
+
+    public function produtos(){
+
+        return $this->belongsToMany('App\Models\Produto','encomendas_produtos', 'id_encomenda', 'id_produto');
+    }
 }
