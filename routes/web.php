@@ -33,3 +33,21 @@ Route::get('/encomendas/{id}/show', 'App\Http\Controllers\EncomendasController@s
 Route::get('/formulario', 'App\Http\Controllers\FormularioController@formulario')->name('formulario');
 
 Route::post('/mostrar', 'App\Http\Controllers\MostrarController@mostrar')->name('mostrar');
+
+
+
+Route::get('clientes/create','App\Http\Controllers\ClientesController@create')->name('clientes.create');
+
+Route::post('clientes/store','App\Http\Controllers\ClientesController@store')->name('clientes.store');
+
+Route::get('clientes/edit','App\Http\Controllers\ClientesController@edit')->name('clientes.edit');
+
+Route::patch('clientes/update','App\Http\Controllers\ClientesController@update')->name('clientes.update');
+
+Route::get('clientes/destroy/{id}','App\Http\Controllers\ClientesController@destroy')->name('clientes.destroy');
+
+
+
+Route::get('encomendas/create','App\Http\Controllers\EncomendasController@create')->name('encomendas.create');
+
+Route::post('encomendas/store','App\Http\Controllers\EncomendasController@store')->name('encomendas.store');

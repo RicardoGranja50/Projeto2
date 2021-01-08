@@ -1,14 +1,14 @@
 @extends('layout')
+@section('titulo')
+
+@endsection
 @section('conteudo')
 
-@if(is_null($cliente))
+@if(count($clientes)==0)
   <h3>Cliente nao encontrado</h3>
-  <h4>Clientes:</h4>
-  @foreach($clientes as $c)
     <ul>
-      <li>{{$c->nome}}</li>
+      <li>{{$pesquisa}}</li>
     </ul>
-  @endforeach
 @else 
   <table class="table table-dark">
   <thead>
@@ -35,6 +35,8 @@
   @endforeach
   </table>
 @endif
+
+@endsection
 
 
 

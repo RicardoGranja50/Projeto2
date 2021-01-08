@@ -14,12 +14,11 @@ class MostrarController extends Controller
        
         $pesquisa = $r->nome;
 
-        $cliente = Cliente::where('nome',$pesquisa)->first();
+        
         $clientes = Cliente::where('nome','like','%'.$pesquisa.'%')->with('encomenda')->get();
-
+        
         return view('mostrar', [
             'pesquisa'=>$pesquisa,
-            'cliente'=>$cliente,
             'clientes'=>$clientes
         ]);
     }

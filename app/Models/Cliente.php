@@ -16,4 +16,13 @@ class Cliente extends Model
 
         return $this->hasMany('App\Models\Encomenda','id_cliente');
     }
+
+    protected $fillable=[
+
+        'nome',
+        'morada',
+        'telefone',
+        'email'
+
+    ];
 }

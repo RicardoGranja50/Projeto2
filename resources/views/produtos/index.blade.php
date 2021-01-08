@@ -1,3 +1,9 @@
+@extends('layout')
+@section('titulo')
+
+@endsection
+@section('conteudo')
+
 <h3>Produtos : </h3>
 <ul>
 @foreach($produtos as $produto)
@@ -7,3 +13,5 @@
 	</li>
 @endforeach
 </ul>
+
+@endsection

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 13-Nov-2020 às 16:22
+-- Generation Time: 08-Jan-2021 às 18:22
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.2
 
@@ -47,7 +47,8 @@ INSERT INTO `clientes` (`id_cliente`, `nome`, `morada`, `telefone`, `email`, `up
 (2, 'Antonio Pereira', 'Rua Nuno Alveres', '913334442', 'apereira@gmail.com', '2020-11-05 00:00:00', '2020-11-05 00:00:00'),
 (3, 'Rafael Ferreira', 'Rua Vasco da gama', '913346665', 'rferreira@gmail.com', '2020-11-05 00:00:00', '2020-11-05 00:00:00'),
 (4, 'João Manuel', 'Rua da ponte', '918976253', 'jmanuel@gmail.com', '2020-11-05 00:00:00', '2020-11-05 00:00:00'),
-(5, 'Inês Fonseca', 'Rua António Palha', '913678925', 'ifonseca@gmail.com', '2020-11-05 00:00:00', '2020-11-05 00:00:00');
+(5, 'Inês Fonseca', 'Rua António Palha', '913678925', 'ifonseca@gmail.com', '2020-11-05 00:00:00', '2020-11-05 00:00:00'),
+(6, 'Ricardo', 'S.Salvador', '939236400', 'ricapt555@gmail.com', '2021-01-08 16:18:39', '2021-01-08 15:52:41');
 
 -- --------------------------------------------------------
 
@@ -197,7 +198,7 @@ ALTER TABLE `vendedores`
 -- AUTO_INCREMENT for table `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `encomendas`

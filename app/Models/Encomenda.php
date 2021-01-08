@@ -31,4 +31,13 @@ class Encomenda extends Model
 
         return $this->belongsToMany('App\Models\Produto','encomendas_produtos', 'id_encomenda', 'id_produto');
     }
+
+    protected $fillable=[
+
+        'id_cliente',
+        'id_vendedor',
+        'data',
+        'observacoes'
+        
+    ];
 }
