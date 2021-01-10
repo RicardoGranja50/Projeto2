@@ -9,6 +9,11 @@ use App\Models\Encomenda;
 class ClientesController extends Controller
 {
     //
+    public function principal(){
+
+        return view('clientes.principal');
+
+    }
 
     public function index(){
 

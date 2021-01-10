@@ -56,7 +56,7 @@ class EncomendasController extends Controller
         ]);
         
         $produto=$req->id_produto;
-        $encomenda=Enocmenda::create($novaEncomenda);
+        $encomenda=Encomenda::create($novaEncomenda);
         $encomenda->encomenda_produto()->attach($produto);
 
         return redirect()->route('encomendas.index',[

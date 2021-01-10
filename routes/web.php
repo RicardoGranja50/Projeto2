@@ -51,3 +51,8 @@ Route::get('clientes/destroy/{id}','App\Http\Controllers\ClientesController@dest
 Route::get('encomendas/create','App\Http\Controllers\EncomendasController@create')->name('encomendas.create');
 
 Route::post('encomendas/store','App\Http\Controllers\EncomendasController@store')->name('encomendas.store');
+
+
+
+
+Route::get('/','App\Http\Controllers\ClientesController@principal')->name('clientes.principal');
