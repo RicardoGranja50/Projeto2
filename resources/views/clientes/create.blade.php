@@ -30,8 +30,11 @@
                 @if($errors->has('email'))
                     <b style="color:red">O email deve ser entre 5 e 200 caracteres</b><br>
                 @endif
+
                 <input type="submit" value="Criar" class="btn btn-primary">
-            
+        
+            </div>
+
         </div>
     </form>
 @endsection

@@ -55,4 +55,28 @@ Route::post('encomendas/store','App\Http\Controllers\EncomendasController@store'
 
 
 
+
 Route::get('/','App\Http\Controllers\ClientesController@principal')->name('clientes.principal');
+
+Route::get('encomendas/create/produto/{id}','App\Http\Controllers\EncomendasController@createProduto')->name('encomendas.create.produto');
+
+Route::post('encomendas/store/produto/{id}','App\Http\Controllers\EncomendasController@storeProduto')->name('encomendas.store.produto');
+
+
+
+Route::get('produtos/create','App\Http\Controllers\ProdutosController@create')->name('produtos.create');
+
+Route::post('produtos/store','App\Http\Controllers\ProdutosController@store')->name('produtos.store');
+
+
+
+Route::post('produtos/stock/mais','App\Http\Controllers\ProdutosController@mais')->name('produtos.stock.mais');
+
+Route::post('produtos/stock/menos','App\Http\Controllers\ProdutosController@menos')->name('produtos.stock.menos');
+
+
+Route::get('produtos/edit','App\Http\Controllers\ProdutosController@edit')->name('produtos.edit');
+
+Route::patch('produtos/update','App\Http\Controllers\ProdutosController@update')->name('produtos.update');
+
+Route::get('produtos/destroy/{id}','App\Http\Controllers\ProdutosController@destroy')->name('produtos.destroy');

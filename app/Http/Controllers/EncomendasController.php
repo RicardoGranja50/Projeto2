@@ -25,7 +25,6 @@ class EncomendasController extends Controller
     public function show(Request $r){
 
         $idEncomenda = $r->id;
-
         $encomendas = Encomenda::where('id_encomenda',$idEncomenda)->with(['cliente','vendedor','produtos'])->first();
 		return view('encomendas.show',[
 			'encomendas'=>$encomendas
@@ -47,20 +46,50 @@ class EncomendasController extends Controller
     }
 
     public function store(Request $req){
-
+        
         $novaEncomenda=$req->validate([
             'id_cliente'=>['numeric','required'],
             'id_vendedor'=>['numeric','required'],
-            'data'=>['nullable','date'],
+            'data'=>['required','date'],
             'observacoes'=>['nullable','min:10','max:200']
         ]);
         
-        $produto=$req->id_produto;
+        
         $encomenda=Encomenda::create($novaEncomenda);
-        $encomenda->encomenda_produto()->attach($produto);
+        
 
         return redirect()->route('encomendas.index',[
             'id'=>$encomenda->id_encomenda,
+        ]);
+
+    }
+
+    public function createProduto(Request $req){
+
+        $produtos=Produto::all();
+        $encomenda=$req->id;
+
+        return view('encomendas.createProduto',[
+            'produtos'=>$produtos,
+            'encomenda'=>$encomenda
+        ]);
+        
+    }
+
+    public function storeProduto(Request $req){
+
+        $encomenda=$req->id;
+        $novoProduto=$req->validate([
+            'id_produto'=>['numeric','required'],
+            'preco'=>['required','min:1','max:3'],
+            'quantidade'=>['required','min:1','max:200']
+        ]);
+            ///fiquei aqui (perguntar na proxima aula sobre add id encomenda)
+        $produto=EncomendaProduto::create($novoProduto);
+        $produto->encomenda()->attach($encomenda);
+
+        return redirect()->route('encomendas.show',[
+            'id'=>$encomenda
         ]);
         
     }

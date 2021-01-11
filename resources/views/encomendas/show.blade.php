@@ -11,6 +11,10 @@
     <li>Vendedor: <a href="{{route('vendedores.show',['id'=>$encomendas->vendedor->id_vendedor])}}">{{$encomendas->vendedor->nome}}</a></li>
     @foreach($encomendas->produtos as $produto)
     <li>Produto: <a href="{{route('produtos.show',['id'=>$produto->id_produto])}}">{{$produto->designacao}}</a></li>
+    <li>Quantidade: {{$produto->quantidade}}</li>
+    <li>Preço: {{$produto->preco}}</li>
     @endforeach
 </ul>
+<br>
+<a href="{{route('encomendas.create.produto',['id'=>$encomendas->cliente->id_cliente])}}" class="btn btn-primary">Adicionar Produto</a>
 @endsection

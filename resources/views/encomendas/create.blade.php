@@ -7,13 +7,7 @@
     <form action="{{route('encomendas.store')}}" enctype="multipart/form-data" method="post">
         @csrf
         <div class="container-fluid">
-            Produto
-            <select name="id_produto">
-                @foreach($produtos as $produto)
-                    <option value="{{$produto->id_produto}}">{{$produto->designacao}}</option>
-                @endforeach
-            </select>
-            <br><br>
+
             @if($errors->has('id_produto'))
                 <b style="color:red">Insira o produto</b><br>
             @endif
@@ -39,17 +33,24 @@
             @if($errors->has('id_cliente'))
                 <b style="color:red">Insira o cliente</b><br>
             @endif
+           Data: (<b style="color:red">*</b>)<input type="date" name="data" value="{{old('data')}}"><br><br>
 
-            Data: (<b style="color:red">*</b>)<input type="date" name="data" value="{{old('data')}}"><br><br>
+           
+
             @if($errors->has('data'))
                 <b style="color:red">Insira uma data</b><br>
             @endif
 
-            Observaçao: (<b style="color:red">*</b>)<input type="text" name="data" value="{{old('observacao')}}"><br><br>
+
+
+            Observaçao: <input type="text" name="observacao" value="{{old('observacao')}}"><br><br>
+
             @if($errors->has('observacao'))
                 <b style="color:red">Insira um comentario entre 5 e 200 caracteres</b><br>
             @endif
             <input type="submit" value="Criar" class="btn btn-primary">
         </div>
+
     </form>
+
 @endsection

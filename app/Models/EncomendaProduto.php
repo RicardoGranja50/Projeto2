@@ -21,4 +21,13 @@ class EncomendaProduto extends Model
 
         return $this->belongsTo('App\Models\Encomenda','id_encomenda');
     }
+
+    protected $fillable=[
+
+        'id_encomenda',
+        'id_produto',
+        'preco',
+        'quantidade'
+        
+    ];
 }
