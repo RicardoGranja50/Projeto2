@@ -21,4 +21,13 @@ class Produto extends Model
 
         return $this->belongsToMany('App\Models\Encomenda','encomendas_produtos', 'id_produto', 'id_encomenda');
     }
+
+     protected $fillable=[
+
+        'designacao',
+        'stock',
+        'preco',
+        'observacoes'
+        
+    ];
 }

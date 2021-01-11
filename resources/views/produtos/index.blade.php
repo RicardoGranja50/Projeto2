@@ -13,5 +13,5 @@
 	</li>
 @endforeach
 </ul>
-
+<a href="{{route('produtos.create')}}" class="btn btn-primary">Adicionar Produto</a>
 @endsection
