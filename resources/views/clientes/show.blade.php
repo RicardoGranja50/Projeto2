@@ -9,7 +9,6 @@
     <li>Morada: {{$clientes->morada}}</li>
     <li>Telefone: {{$clientes->telefone}}</li>
     <li>Email: {{$clientes->email}}</li>
-    <li>Email: {{$clientes->email}}</li>
     @foreach($clientes->encomenda as $encomenda)
         <li>Encomenda: <a href="{{route('encomendas.show', ['id'=>$encomenda->id_encomenda])}}">{{$encomenda->data}}</a></li>
     @endforeach
