@@ -80,3 +80,15 @@ Route::get('produtos/edit','App\Http\Controllers\ProdutosController@edit')->name
 Route::patch('produtos/update','App\Http\Controllers\ProdutosController@update')->name('produtos.update');
 
 Route::get('produtos/destroy/{id}','App\Http\Controllers\ProdutosController@destroy')->name('produtos.destroy');
+
+
+Route::get('vendedores/create','App\Http\Controllers\VendedoresController@create')->name('vendedores.create');
+
+Route::post('vendedores/store','App\Http\Controllers\VendedoresController@store')->name('vendedores.store');
+
+
+Route::get('vendedores/edit','App\Http\Controllers\VendedoresController@edit')->name('vendedores.edit');
+
+Route::patch('vendedores/update','App\Http\Controllers\VendedoresController@update')->name('vendedores.update');
+
+Route::get('vendedores/destroy/{id}','App\Http\Controllers\VendedoresController@destroy')->name('vendedores.destroy');

@@ -16,4 +16,12 @@ class Vendedor extends Model
 
         return $this->hasMany('App\Models\Encomenda','id_vendedor');
     }
+
+     protected $fillable=[
+
+        'nome',
+        'especialidade',
+        'email'
+
+    ];
 }
